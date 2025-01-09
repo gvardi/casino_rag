@@ -1,10 +1,10 @@
 import streamlit as st
 import os
-from rag import RAGQuerySystem  # Import your RAG class
+from rag import EnhancedRAGQuerySystem  # Import your RAG class
 
 def init_rag():
     api_key = st.secrets["OPENAI_API_KEY"]  
-    return RAGQuerySystem(api_key=api_key)
+    return EnhancedRAGQuerySystem(api_key=api_key)
 
 def main():
     st.title("Casino Regulations Q&A")
