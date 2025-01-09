@@ -7,7 +7,7 @@ def init_rag():
     return EnhancedRAGQuerySystem(api_key=api_key)
 
 def main():
-    st.title("Casino Regulations Q&A")
+    st.title("Casino Application Q&A")
     
     if "rag_system" not in st.session_state:
         st.session_state.rag_system = init_rag()
@@ -20,7 +20,7 @@ def main():
         with st.chat_message(message["role"]):
             st.write(message["content"])
 
-    if prompt := st.chat_input("Ask a question about casino regulations"):
+    if prompt := st.chat_input("Ask a question about the casino application process"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.write(prompt)
